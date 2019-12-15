@@ -13,15 +13,24 @@ class ExchangeRateCollectionViewCell: UICollectionViewCell {
     static var nib: UINib {
         return UINib(nibName: String(describing: self), bundle: nil)
     }
+    
+    //MARK: A
+    private lazy var numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.roundingMode = .halfUp
+        numberFormatter.maximumFractionDigits = 3
+        return numberFormatter
+    }()
 
     //MARK: Outlets
-    @IBOutlet private var currencyNameLabel: UILabel!
-    @IBOutlet private var currencyCodeLabel: UILabel!
-    @IBOutlet private var convertedValueLabel: UILabel!
+    @IBOutlet var currencyNameLabel: UILabel!
+    @IBOutlet var currencyCodeLabel: UILabel!
+    @IBOutlet var convertedValueLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(name: String?, code: String?, value: Double) {
+        currencyNameLabel.text = name
+        currencyCodeLabel.text = code
+        convertedValueLabel.text = numberFormatter.string(from: NSNumber(value: value))
     }
-
 }

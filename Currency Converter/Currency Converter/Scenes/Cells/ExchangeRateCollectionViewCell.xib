@@ -52,6 +52,11 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="171" height="120"/>
+            <connections>
+                <outlet property="convertedValueLabel" destination="nxq-nu-Wtc" id="7pe-VC-NUE"/>
+                <outlet property="currencyCodeLabel" destination="mix-Pc-X5c" id="fNo-yy-iiP"/>
+                <outlet property="currencyNameLabel" destination="NfO-Zg-FHB" id="sPo-nI-JbX"/>
+            </connections>
             <point key="canvasLocation" x="225.36231884057972" y="112.16517857142857"/>
         </collectionViewCell>
     </objects>
