@@ -10,12 +10,12 @@ import UIKit
 final class CurrencyConverterCache {
     
     private let minimumRequestInterval = 30
-    private var provider: CurrencyLayerProvider
+    private var service: Service
     private var cache = NSCache<NSString, CachedRates>()
     private var currentRates: Dictionary<String, Double>?
     
-    init(provider: CurrencyLayerProvider) {
-        self.provider = provider
+    init(service: Service) {
+        self.service = service
     }
     
     /**
@@ -32,7 +32,7 @@ final class CurrencyConverterCache {
             return
         }
         
-        provider.getRates { [weak self] result in
+        service.request(router: CurrencyLayerRouter.getRates) { [weak self] (result: Result<RealTimeRates, Error>) in
             switch result {
             case let .success(response):
                 let dataToCache = CachedRates(rates: response.quotes, source: response.source, date: Date())
@@ -47,7 +47,7 @@ final class CurrencyConverterCache {
     }
     
     func loadCurrencies(_ completion: @escaping (_ currencies: Result<[Currency], Error>) -> Void) {
-        provider.getCurrencies { result in
+        service.request(router: CurrencyLayerRouter.getCurrencies) { (result: Result<Currencies, Error>) in
             switch result {
             case let .success(currencies):
                 completion(.success(currencies.array))
@@ -71,5 +71,4 @@ final class CurrencyConverterCache {
         let convertedValue = value / valueInSource
         return convert(value: convertedValue, from: source, to: to)
     }
-    
 }
