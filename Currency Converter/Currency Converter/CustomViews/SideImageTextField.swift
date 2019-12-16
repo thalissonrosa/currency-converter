@@ -30,12 +30,7 @@ class SideImageTextField: UITextField {
     //MARK: Overrides
     override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
         var textRect = super.rightViewRect(forBounds: bounds)
-        textRect.origin.x -= padding //+ (imageHeight / 2)
-        //let heightDiff = (textRect.size.height - imageHeight) / 2
-        //textRect.origin.y += heightDiff
-        //textRect.size.width = imageHeight
-        //textRect.size.height = imageHeight
+        textRect.origin.x -= padding
         return textRect
     }
-
 }

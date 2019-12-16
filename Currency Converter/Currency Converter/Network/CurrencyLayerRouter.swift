@@ -62,7 +62,6 @@ private extension CurrencyLayerRouter {
             let dictionary = NSDictionary(contentsOfFile: path) as? [String : String] else {
                 return nil
         }
-
         return dictionary["AccessKey"]
     }
 }

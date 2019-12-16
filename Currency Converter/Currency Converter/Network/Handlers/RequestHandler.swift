@@ -20,10 +20,8 @@ extension RequestHandler {
         components.host = router.host
         components.path = router.path
         components.queryItems = router.parameters
+        guard let url = components.url else { throw ServiceError.invalidURL }
         
-        guard let url = components.url else {
-            throw ServiceError.invalidURL
-        }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = router.method
         return urlRequest

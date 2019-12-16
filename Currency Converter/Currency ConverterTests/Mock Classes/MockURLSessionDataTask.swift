@@ -19,4 +19,3 @@ class MockURLSessionDataTask: URLSessionDataTask {
         closure()
     }
 }
-

@@ -32,7 +32,6 @@
 		075FE09023A6DBB50038A8CB /* CurrencyLayerAPIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE08F23A6DBB50038A8CB /* CurrencyLayerAPIs.swift */; };
 		075FE09223A6DBF40038A8CB /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE09123A6DBF40038A8CB /* ServiceError.swift */; };
 		075FE09723A6E3E10038A8CB /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 075FE09623A6E3E10038A8CB /* currencies.json */; };
-		075FE09923A6E8790038A8CB /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE09823A6E8790038A8CB /* MockURLSession.swift */; };
 		075FE09C23A703B50038A8CB /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE09B23A703B50038A8CB /* MockURLSessionDataTask.swift */; };
 		075FE09F23A703E30038A8CB /* MockNetworkingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE09E23A703E30038A8CB /* MockNetworkingSession.swift */; };
 		075FE0A123A7075F0038A8CB /* RealTimeRatesAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE0A023A7075F0038A8CB /* RealTimeRatesAPITests.swift */; };
@@ -87,7 +86,6 @@
 		075FE08F23A6DBB50038A8CB /* CurrencyLayerAPIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyLayerAPIs.swift; sourceTree = "<group>"; };
 		075FE09123A6DBF40038A8CB /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		075FE09623A6E3E10038A8CB /* currencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
-		075FE09823A6E8790038A8CB /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		075FE09B23A703B50038A8CB /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 		075FE09E23A703E30038A8CB /* MockNetworkingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkingSession.swift; sourceTree = "<group>"; };
 		075FE0A023A7075F0038A8CB /* RealTimeRatesAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealTimeRatesAPITests.swift; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		075FE09A23A6FEE80038A8CB /* Mock Classes */ = {
 			isa = PBXGroup;
 			children = (
-				075FE09823A6E8790038A8CB /* MockURLSession.swift */,
 				075FE09B23A703B50038A8CB /* MockURLSessionDataTask.swift */,
 				075FE09E23A703E30038A8CB /* MockNetworkingSession.swift */,
 			);
@@ -481,7 +478,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				075FE0A523A71DCE0038A8CB /* ConverterTests.swift in Sources */,
-				075FE09923A6E8790038A8CB /* MockURLSession.swift in Sources */,
 				075FE0A123A7075F0038A8CB /* RealTimeRatesAPITests.swift in Sources */,
 				075FE09C23A703B50038A8CB /* MockURLSessionDataTask.swift in Sources */,
 				075FE09F23A703E30038A8CB /* MockNetworkingSession.swift in Sources */,
@@ -676,7 +672,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Currency ConverterTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,7 +693,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Currency ConverterTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

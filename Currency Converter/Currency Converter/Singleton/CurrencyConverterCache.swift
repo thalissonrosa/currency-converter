@@ -5,7 +5,7 @@
 //  Created by Thalisson da Rosa on 14/12/19.
 //
 
-import UIKit
+import Foundation
 
 final class CurrencyConverterCache {
     
@@ -30,7 +30,7 @@ final class CurrencyConverterCache {
     - parameter completion: The completion handler to call when the request is complete.
     - parameter currencyCode: The code of the currency
     */
-    func loadRates(currencyCode: String = "USD" , _ completion: @escaping (_ rates: Result<[Rate], Error>) -> Void) {
+    func loadRates(currencyCode: String = "USD", _ completion: @escaping (_ rates: Result<[Rate], Error>) -> Void) {
         if let cachedRates = cache.object(forKey: currencyCode as NSString),
             cachedRates.date.minutes(from: Date()) < minimumRequestInterval {
             lastRequestedCurrency = currencyCode
@@ -71,7 +71,6 @@ final class CurrencyConverterCache {
         if let rate = cachedRates.rates[from+to] {
             return value * rate
         }
-        
         if let rate = cachedRates.rates[from+to] {
             return value / rate
         }
@@ -79,6 +78,7 @@ final class CurrencyConverterCache {
         //When there's no direct conversion available, we'll have to do an extra step. For example, BRL to CAD is not avaible but USD to BRL is. In this scenario we'll first convert BRL to USD and then USD to CAD.
         let source = currencyCode
         guard let valueInSource = cachedRates.rates[source+from] else { return nil }
+        
         let convertedValue = value / valueInSource
         return convert(value: convertedValue, from: source, to: to)
     }

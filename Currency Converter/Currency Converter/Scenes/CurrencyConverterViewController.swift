@@ -81,6 +81,7 @@ private extension CurrencyConverterViewController {
     
     var isValidInput: Bool {
         guard let text = valueInputTextField.text, Double(text) != nil else { return false }
+        
         return selectedCurrency != nil
     }
     
@@ -121,7 +122,6 @@ private extension CurrencyConverterViewController {
     
     func reloadDataIfPossible() {
         guard isValidInput else { return }
-        
         exchangeRatesCollectionView.reloadData()
     }
     

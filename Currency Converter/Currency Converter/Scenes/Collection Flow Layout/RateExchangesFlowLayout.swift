@@ -18,7 +18,6 @@ final class ExchangeRateFlowLayout: UICollectionViewFlowLayout {
     override func prepare() {
         super.prepare()
         guard let collectionView = collectionView else { return }
-        
         let separatorSpace = minimumInteritemSpacing * CGFloat(maxNumColumns - 1)
         let availableWidth = collectionView.bounds.width - separatorSpace - (insets * 2)
         let cellWidth = (availableWidth / CGFloat(maxNumColumns)).rounded(.down)

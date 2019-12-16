@@ -52,4 +52,3 @@ class RealTimeRatesAPITests: XCTestCase {
             XCTAssertNotNil(response?.quotes)
         }
     }
-
