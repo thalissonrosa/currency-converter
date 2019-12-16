@@ -11,27 +11,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ExchangeRateCollectionViewCell" customModule="Currency_Converter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="171" height="98"/>
+            <rect key="frame" x="0.0" y="0.0" width="171" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="171" height="98"/>
+                <rect key="frame" x="0.0" y="0.0" width="171" height="65"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-nu-Wtc">
-                        <rect key="frame" x="16" y="61" width="139" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxq-nu-Wtc">
+                        <rect key="frame" x="63.5" y="37" width="44.5" height="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mix-Pc-X5c">
-                        <rect key="frame" x="16" y="37" width="139" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfO-Zg-FHB">
-                        <rect key="frame" x="16" y="16" width="139" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfO-Zg-FHB">
+                        <rect key="frame" x="63.5" y="8" width="44.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -39,23 +33,20 @@
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="mix-Pc-X5c" firstAttribute="top" secondItem="NfO-Zg-FHB" secondAttribute="bottom" id="0iQ-Na-vcC"/>
-                <constraint firstAttribute="bottom" secondItem="nxq-nu-Wtc" secondAttribute="bottom" constant="16" id="2M2-hX-Tuk"/>
-                <constraint firstItem="NfO-Zg-FHB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="5OA-kc-qQy"/>
-                <constraint firstItem="mix-Pc-X5c" firstAttribute="trailing" secondItem="NfO-Zg-FHB" secondAttribute="trailing" id="7AP-hd-zp8"/>
-                <constraint firstAttribute="trailing" secondItem="NfO-Zg-FHB" secondAttribute="trailing" constant="16" id="Fpe-mv-UyK"/>
-                <constraint firstItem="NfO-Zg-FHB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="Npq-EY-nl7"/>
-                <constraint firstItem="nxq-nu-Wtc" firstAttribute="top" secondItem="mix-Pc-X5c" secondAttribute="bottom" constant="8" id="Och-2P-sTa"/>
-                <constraint firstItem="nxq-nu-Wtc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="bFr-XV-5m3"/>
-                <constraint firstItem="mix-Pc-X5c" firstAttribute="leading" secondItem="NfO-Zg-FHB" secondAttribute="leading" id="knF-rM-npW"/>
-                <constraint firstAttribute="trailing" secondItem="nxq-nu-Wtc" secondAttribute="trailing" constant="16" id="mlK-Ks-kRA"/>
+                <constraint firstAttribute="bottom" secondItem="nxq-nu-Wtc" secondAttribute="bottom" constant="8" id="2M2-hX-Tuk"/>
+                <constraint firstItem="nxq-nu-Wtc" firstAttribute="trailing" secondItem="NfO-Zg-FHB" secondAttribute="trailing" id="Ll9-8Q-Z67"/>
+                <constraint firstItem="NfO-Zg-FHB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Npq-EY-nl7"/>
+                <constraint firstItem="NfO-Zg-FHB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="iTz-dn-LBa"/>
+                <constraint firstItem="nxq-nu-Wtc" firstAttribute="leading" secondItem="NfO-Zg-FHB" secondAttribute="leading" id="kWF-zw-SRc"/>
+                <constraint firstItem="NfO-Zg-FHB" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="mKe-TK-cOi"/>
+                <constraint firstItem="nxq-nu-Wtc" firstAttribute="top" secondItem="NfO-Zg-FHB" secondAttribute="bottom" constant="8" id="n1M-3c-hkl"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NfO-Zg-FHB" secondAttribute="trailing" constant="8" id="pLq-rN-qYu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="171" height="120"/>
             <connections>
                 <outlet property="convertedValueLabel" destination="nxq-nu-Wtc" id="7pe-VC-NUE"/>
-                <outlet property="currencyCodeLabel" destination="mix-Pc-X5c" id="fNo-yy-iiP"/>
-                <outlet property="currencyNameLabel" destination="NfO-Zg-FHB" id="sPo-nI-JbX"/>
+                <outlet property="currencyCodeLabel" destination="NfO-Zg-FHB" id="C4K-YQ-inq"/>
             </connections>
             <point key="canvasLocation" x="225.36231884057972" y="112.16517857142857"/>
         </collectionViewCell>

@@ -44,6 +44,7 @@
 		075FE0B023A72A2E0038A8CB /* API.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075FE0AF23A72A2E0038A8CB /* API.plist */; };
 		075FE0B223A72D310038A8CB /* NetworkingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE0B123A72D310038A8CB /* NetworkingSession.swift */; };
 		075FE0B623A72DAD0038A8CB /* URLSession+NetworkingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE0B523A72DAD0038A8CB /* URLSession+NetworkingSession.swift */; };
+		075FE0BF23A7371F0038A8CB /* SideImageTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075FE0BE23A7371F0038A8CB /* SideImageTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		075FE0AF23A72A2E0038A8CB /* API.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = API.plist; sourceTree = "<group>"; };
 		075FE0B123A72D310038A8CB /* NetworkingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingSession.swift; sourceTree = "<group>"; };
 		075FE0B523A72DAD0038A8CB /* URLSession+NetworkingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkingSession.swift"; sourceTree = "<group>"; };
+		075FE0BE23A7371F0038A8CB /* SideImageTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideImageTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		075FE04123A56A9B0038A8CB /* Currency Converter */ = {
 			isa = PBXGroup;
 			children = (
+				075FE0BD23A736EE0038A8CB /* CustomViews */,
 				075FE0BB23A72E760038A8CB /* Assets */,
 				075FE0AE23A72A0C0038A8CB /* Config */,
 				075FE0BA23A72E5E0038A8CB /* Delegates */,
@@ -333,6 +336,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		075FE0BD23A736EE0038A8CB /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				075FE0BE23A7371F0038A8CB /* SideImageTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +461,7 @@
 				075FE08823A6A8BD0038A8CB /* CurrencyLayerRouter.swift in Sources */,
 				075FE08E23A6DB7B0038A8CB /* ResponseHandler.swift in Sources */,
 				075FE07623A5800B0038A8CB /* Rate.swift in Sources */,
+				075FE0BF23A7371F0038A8CB /* SideImageTextField.swift in Sources */,
 				075FE0A823A720210038A8CB /* JSONUtils.swift in Sources */,
 				075FE08423A5DC9D0038A8CB /* CachedRates.swift in Sources */,
 				075FE09223A6DBF40038A8CB /* ServiceError.swift in Sources */,

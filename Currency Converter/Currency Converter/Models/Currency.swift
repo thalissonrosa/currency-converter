@@ -12,3 +12,10 @@ struct Currency {
     var name: String
     var code: String
 }
+
+extension Currency {
+    
+    var displayName: String {
+        return "\(name) - \(code)"
+    }
+}

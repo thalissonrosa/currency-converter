@@ -10,6 +10,8 @@ import UIKit
 class CurrencyConverterViewController: UIViewController {
     
     //MARK: Outlets
+    @IBOutlet private var loadingView: UIView!
+    @IBOutlet private var convertButton: UIButton!
     @IBOutlet private var valueInputTextField: UITextField! {
         didSet {
             valueInputTextField.delegate = self
@@ -40,6 +42,7 @@ class CurrencyConverterViewController: UIViewController {
     private var currencies: [Currency] = [] {
         didSet {
             pickerView.reloadAllComponents()
+            currencySelectorTextField.isEnabled = currencies.count > 0
         }
     }
 
@@ -53,6 +56,7 @@ class CurrencyConverterViewController: UIViewController {
             if let currency = selectedCurrency {
                 getRatesFor(currency: currency)
             }
+            convertButton.isEnabled = selectedCurrency != nil
         }
     }
     
@@ -92,13 +96,15 @@ private extension CurrencyConverterViewController {
     }
     
     func loadCurrencies() {
+        loadingView.isHidden = false
         converterCache?.loadCurrencies { [weak self] result in
             switch result {
             case let .success(currencies):
                 self?.currencies = currencies
-            case let .failure(error):
-                print("error")
+            case .failure(_):
+                self?.displayErrorMessage(AppStrings.currenciesNotAvailable.localized)
             }
+            self?.loadingView.isHidden = true
         }
     }
     
@@ -107,8 +113,8 @@ private extension CurrencyConverterViewController {
             switch result {
             case let .success(rates):
                 self?.rates = rates
-            case let .failure(error):
-                print("error")
+            case .failure(_):
+                self?.displayErrorMessage(AppStrings.realTimeRatesNotAvailable.localized)
             }
         }
     }
@@ -117,6 +123,14 @@ private extension CurrencyConverterViewController {
         guard isValidInput else { return }
         
         exchangeRatesCollectionView.reloadData()
+    }
+    
+    func displayErrorMessage(_ message: String) {
+        let dialog = UIAlertController(title: AppStrings.error.localized,
+                                       message: message,
+                                       preferredStyle: .alert)
+        dialog.addAction(UIAlertAction(title: AppStrings.ok.localized, style: .cancel, handler: nil))
+        present(dialog, animated: true)
     }
 }
 
@@ -142,7 +156,7 @@ extension CurrencyConverterViewController: UICollectionViewDataSource {
         
         let toCode = rates[indexPath.item].to
         let convertedValue = liveRates.convert(value: value, from: fromCode, to: toCode)
-        exchangeCell.configure(name: nil, code: toCode, value: convertedValue)
+        exchangeCell.configure(code: toCode, value: convertedValue)
         return exchangeCell
     }
 }
@@ -151,12 +165,13 @@ extension CurrencyConverterViewController: UICollectionViewDataSource {
 extension CurrencyConverterViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return currencies[row].name
+        let currency = currencies[row]
+        return currency.displayName
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedCurrency = currencies[row]
-        currencySelectorTextField.text = selectedCurrency?.name
+        currencySelectorTextField.text = selectedCurrency?.displayName
     }
 }
 

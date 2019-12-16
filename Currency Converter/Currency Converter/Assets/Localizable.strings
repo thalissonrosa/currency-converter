@@ -7,3 +7,7 @@
 */
 
 "notApplicable" = "N/A";
+"currenciesNotAvailable" = "Currencies not available. Please try again later";
+"realTimeRatesNotAvailable" = "Rates not available for the selected currency";
+"error" = "Error";
+"ok" = "OK";

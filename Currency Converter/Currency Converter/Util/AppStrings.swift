@@ -9,6 +9,10 @@ import UIKit
 
 enum AppStrings: String {
     case notApplicable
+    case currenciesNotAvailable
+    case realTimeRatesNotAvailable
+    case error
+    case ok
     
     var localized: String {
         return NSLocalizedString(self.rawValue, comment: "")
