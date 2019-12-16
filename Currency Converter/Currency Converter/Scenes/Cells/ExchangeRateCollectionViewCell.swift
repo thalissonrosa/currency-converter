@@ -28,9 +28,13 @@ class ExchangeRateCollectionViewCell: UICollectionViewCell {
     @IBOutlet var currencyCodeLabel: UILabel!
     @IBOutlet var convertedValueLabel: UILabel!
     
-    func configure(name: String?, code: String?, value: Double) {
+    func configure(name: String?, code: String?, value: Double?) {
         currencyNameLabel.text = name
         currencyCodeLabel.text = code
-        convertedValueLabel.text = numberFormatter.string(from: NSNumber(value: value))
+        if let value = value {
+            convertedValueLabel.text = numberFormatter.string(from: NSNumber(value: value))
+        } else {
+            convertedValueLabel.text = AppStrings.notApplicable.localized
+        }
     }
 }

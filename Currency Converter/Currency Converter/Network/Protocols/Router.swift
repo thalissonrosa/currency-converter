@@ -8,6 +8,7 @@
 import Foundation
 
 protocol Router {
+    
     var scheme: String { get }
     var host: String { get }
     var path: String { get }

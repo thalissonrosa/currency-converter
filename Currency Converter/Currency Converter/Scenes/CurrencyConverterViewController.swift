@@ -88,8 +88,7 @@ private extension CurrencyConverterViewController {
     }
     
     func setupConverterCache() {
-        let service = Service()
-        converterCache = CurrencyConverterCache(service: service)
+        converterCache = CurrencyConverterCache()
     }
     
     func loadCurrencies() {

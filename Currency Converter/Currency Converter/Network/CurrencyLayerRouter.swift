@@ -8,6 +8,7 @@
 import UIKit
 
 enum CurrencyLayerRouter: Router {
+    
     case getRates
     case getCurrencies
     
@@ -42,10 +43,26 @@ enum CurrencyLayerRouter: Router {
     }
     
     var parameters: [URLQueryItem] {
-        let accessKey = "287c59bfe411876ee490d32c307d5c82"
         switch self {
         case .getCurrencies, .getRates:
-            return [URLQueryItem(name: "access_key", value: accessKey)]
+            guard let key = accessKey else {
+                assertionFailure("Missing accessKey")
+                return []
+            }
+            return [URLQueryItem(name: "access_key", value: key)]
         }
+    }
+}
+
+//MARK: Private variables/methods
+private extension CurrencyLayerRouter {
+    
+    var accessKey: String? {
+        guard let path = Bundle.main.path(forResource: "API", ofType: "plist"),
+            let dictionary = NSDictionary(contentsOfFile: path) as? [String : String] else {
+                return nil
+        }
+
+        return dictionary["AccessKey"]
     }
 }
